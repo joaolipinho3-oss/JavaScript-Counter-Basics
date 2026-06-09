@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-bt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet" />
+    <title>Counter 1.0</title>
+  </head>
+  <body>
+    <header><h1 class="title">SIMPLE COUNTER</h1></header>
+    <main class="main-layout">
+      <h2 id="display-counter">0</h2>
+      <div class="buttons">
+        <button id="soma">+</button>
+        <button id="subtracao">-</button>
+      </div>
+      <div class="increment">
+        <label>
+          <span> Increment/decrement by:</span>
+          <span class="value-increment"
+            ><input
+              id="changeBy"
+              type="number"
+              min="0"
+              max="10"
+              aria-valuetext="1"
+          /></span>
+          <p>
+            Use the keyboards <span id="keyboardShortcut_1">+</span> or
+            <span id="keyboardShortcut_2">-</span> to change the increment value
+          </p>
+        </label>
+      </div>
+    </main>
+    <footer>
+      <h3 id="copyright">
+        Projeto feito por CCC - <span id="footer-info">  Sem o uso de I.A ou 'copy and paste'.</span>
+      </h3>
+    </footer>
+  </body>
+</html>
