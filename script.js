@@ -37,12 +37,12 @@ reset.addEventListener('click', () => {
 })
 
 document.addEventListener('keydown', (event) => {
-    if (event.key === '=') {
+    if (event.key === '=' || event.key === ' ') {
         contador += parseInt(increment.value);
         atualizarTela();
     }
 
-    if (event.key === '-') {
+    if (event.key === '-') { 
         contador -= parseInt(increment.value);
         atualizarTela();
     }
