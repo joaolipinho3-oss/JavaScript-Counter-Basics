@@ -53,9 +53,9 @@ document.addEventListener('keydown', (event) => {
     }
 
     if (event.key === 'ArrowUp') {
-        increment.value += 1
+        increment.value += 1;
     }
     if (event.key === 'ArrowDown') {
-        increment.value -= 1
+        increment.value -= 1;
     }
 });
