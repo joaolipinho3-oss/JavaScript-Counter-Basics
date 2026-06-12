@@ -1,8 +1,8 @@
 const botaoSoma = document.getElementById('soma'); // Botão de +
 const botaoSubtracao = document.getElementById('subtracao'); // Botão de menos
 const increment = document.getElementById('changeBy'); // Mudar incremento
-const tela = document.getElementById('display-counter');
-const reset = document.getElementById('reset-button');
+const tela = document.getElementById('display-counter'); // Tela contador
+const reset = document.getElementById('reset-button'); // Reiniciar
 
 console.log(botaoSoma);
 console.log(botaoSubtracao);
