@@ -11,22 +11,23 @@ console.log(tela);
 console.log(reset)
 
 let contador = 0;
-let minIncrement = 0;
+let minIncrement = 1;
 let maxIncrement = 10
 
 function atualizarTela() { //Atualiza o display-counter e substitui o valor pelo número do contador.
   tela.textContent = contador;
 };
 
-function contadorMinMax() { // Mínimo do contador
-    if (increment.value > minIncrement) {
+function contadorMinMax() { // Mínimo do incremento
+    if (increment.value < minIncrement) {
         increment.value = minIncrement;
         alert("Desculpe o valor mínimo do incremento é 1 :(")
         }
-    else {
-        increment.value = parseInt(increment.value) - 1;
+    else if (increment.value > maxIncrement) {
+        increment.value = maxIncrement;
+        alert("Desculpe o valor máximo do incremento é 10 :(")
         }
-}
+    }
 
 botaoSoma.addEventListener('click',() => { //Evento de clique para aumentar o contador.
     console.log("Clique no +");
@@ -46,38 +47,39 @@ reset.addEventListener('click', () => { // Lógica do botão de reiniciar
     console.log("Reset pressionado")
     contador = 0
     atualizarTela()
-    console.log(`Contador: ${contador}`)
+    console.log("Contador reiniciado!")
 })
 
 document.addEventListener('keydown', (event) => { // Logica dos atalhos de teclado
     if (event.key === '=' || event.key === ' ') {
-        if (increment.value > maxIncrement) {
-        
-        }
         contador += parseInt(increment.value);
+        console.log("Tecla pressionada +");
+        console.log(`Contador: ${contador}`);
         atualizarTela();
     }
 
     if (event.key === '-') { 
         contador -= parseInt(increment.value);
+        console.log("Tecla pressionada +");
+        console.log(`Contador: ${contador}`);
         atualizarTela();
     }
 
     if (event.key === 'r') {
+        console.log("Tecla 'reset' pressionada")
+        console.log("contador reiniciado")
         contador = 0;
         atualizarTela();
     }
 
     if (event.key === 'ArrowUp') {
-        if (increment.value > maxIncrement) {
-            increment.value = maxIncrement;
-            alert("Desculpe o valor máximo do incremento é 10 :(")
-        }
-        else {
-            increment.value = parseInt(increment.value) + 1;
-        }
+        increment.value = parseInt(increment.value) + 1;
+        contadorMinMax()
+        console.log("Incremento + 1")
     }
     if (event.key === 'ArrowDown') {
+        increment.value = parseInt(increment.value) - 1
         contadorMinMax()
+        console.log("Incremento - 1")
     }
 });
