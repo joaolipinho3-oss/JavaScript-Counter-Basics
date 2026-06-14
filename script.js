@@ -13,9 +13,18 @@ console.log(reset)
 let contador = 0;
 let minIncrement = 1;
 let maxIncrement = 10
+let lastCounter = []
 
 function atualizarTela() { //Atualiza o display-counter e substitui o valor pelo número do contador.
-  tela.textContent = contador;
+    try {
+        tela.textContent = contador;
+    }
+    catch (contador = NaN) {
+        contador = lastIndexOf(lastCounter)
+    }
+    finally{
+        tela.textContent = contador;
+    }
 };
 
 function contadorMinMax() { // Mínimo do incremento
