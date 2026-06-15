@@ -64,7 +64,7 @@ reset.addEventListener('click', () => { // Lógica do botão de reiniciar
     console.log("Contador reiniciado!")
 })
 
-document.addEventListener('keydown', (event) => { // Logica dos atalhos de teclado
+document.addEventListener('keyup', (event) => { // Logica dos atalhos de teclado
     if (event.key === '=' || event.key === ' ') {
         obterIncremento()
         contador += parseInt(increment.value);
@@ -102,8 +102,14 @@ document.addEventListener('keydown', (event) => { // Logica dos atalhos de tecla
     }
 });
 
-increment.addEventListener('keydown', (event) => {
+increment.addEventListener('keydown', (event) => { //Evita que o usuário digite '.' ou vírgula no incremento
     if (event.key === '.' || event.key === ',' || event.key === 'e') {
         event.preventDefault();
     }
 });
+
+increment.addEventListener('blur', () => {
+    if (increment.value.trim() === '') {
+        increment.value = 1;
+    }
+})

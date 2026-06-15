@@ -15,11 +15,10 @@
         <button id="subtracao">-</button>
       </div>
       <button class="buttons" id="reset-button">RESET</button>
-      <div class="increment">
-        <label>
-          <span id="span"> Increment by:</span>
+          <span id="span">Increment by:</span>
           <span class="value-increment"
-            ><input
+            > <!-- Aqui onde o incremento é localizado na página -->
+            <input
               id="changeBy"
               type="number"
               min="1"
@@ -27,15 +26,17 @@
               step="1"
               value="1"
           /></span>
+        <div>
+      <div id="howToUse"> <!-- Aqui abre a <div> que explica como usar o contador-->
           <p>
-            Use the keyboards <span id="keyboardShortcut_1">+</span> or
-            <span id="keyboardShortcut_2">-</span> to change the increment value
+            Use the ⬆️ or ⬇️ on your keyboard to change the increment value
           </p>
+          <p>You can also change the increment value using the buttons on the input <br>or you can just type the values as you want inside.</p>
           <p>
-            Press 'spacebar' to start the counter
+            Press <span style="font-weight: bold;">'Spacebar'</span> to start the counter and 
+            <span style="font-weight: bold;">'R'</span> to reset the counter.
           </p>
-        </label>
-      </div>
+      </div> <!-- Aqui fecha a <div> que explica como usar o contador-->
     </main>
     <footer>
       <h3 id="copyright">
