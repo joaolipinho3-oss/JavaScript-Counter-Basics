@@ -13,21 +13,21 @@ console.log(reset)
 let contador = 0;
 let minIncrement = 1;
 let maxIncrement = 10
-let lastCounter = []
 
 function atualizarTela() { //Atualiza o display-counter e substitui o valor pelo número do contador.
-    try {
-        tela.textContent = contador;
-    }
-    catch (contador = NaN) {
-        contador = lastIndexOf(lastCounter)
-    }
-    finally{
-        tela.textContent = contador;
-    }
+    tela.textContent = contador;
 };
-
-function contadorMinMax() { // Mínimo do incremento
+function displayValidacao(display) {
+    tela = display
+    try {
+        atualizarTela()
+    }
+    catch (NaN) {
+        alert("Ocorreu um erro inesperado! Verifique se o incremento é maior que 1 e não há casas decimais.")
+        tela 
+    }
+}
+function contadorMinMax() { // Mínimo e máximo do incremento
     if (increment.value < minIncrement) {
         increment.value = minIncrement;
         alert("Desculpe o valor mínimo do incremento é 1 :(")
